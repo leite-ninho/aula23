@@ -1,0 +1,197 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Container centralizado */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+}
+
+header .logo h1 {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Seção de Destaques (Carrossel de filmes) */
+.destaques {
+    background-color: #333;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.destaques .carousel {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.carousel-item {
+    margin: 0 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-overlay h3 {
+    font-size: 1.5em;
+}
+
+.carousel-overlay p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.carousel-overlay .btn {
+    background-color: #f60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-overlay .btn:hover {
+    background-color: #d45;
+}
+
+/* Seção de Filmes em Cartaz */
+.filmes {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.filmes h2 {
+    margin-bottom: 40px;
+}
+
+.filmes-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.filme {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.filme img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.filme:hover {
+    transform: translateY(-10px);
+}
+
+.filme h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.filme p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.filme .btn {
+    background-color: #f60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.filme .btn:hover {
+    background-color: #d45;
+}
+
+/* Seção de Contato */
+.contato {
+    background-color: #222;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contato p {
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
