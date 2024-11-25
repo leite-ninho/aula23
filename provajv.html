@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Beautiful Girls</title>
+    <img src="C:\Users\alunoetc\AppData\Local\Temp\Rar$DIa4912.11202\banner.jpg"
+   <h1>venha conhecer nssos serviços 
+    <h2>receba informaçãoes e promoções 
+        <img src="C:\Users\alunoetc\AppData\Local\Temp\Rar$DIa4912.46298\logo.jpg"
+        
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <a href="index.html" class="logo"></a>
+        <div class="menu-btn fas fa-bars"></div>
+        <nav class="navbar">
+            <a href="index.html">Início</a>
+            <a href="contatos.html">Contato</a>
+            <a href="loginalunos.html">Área do cliente</a>
+            <a href="P1restrita.html">Área Restrita</a>
+           
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section style="padding: 20px; text-align: center;">
+            <h1 style="color: white; margin-bottom: 20px;">Cadastro de cliente</h1>
+            <div class="card-login" style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: rgba(255, 255, 255, 0.753); border-radius: 8px;">
+                <form action="processa_cadastro.php" method="POST" style="text-align: left;">
+                    <div class="textfield" style="margin-bottom: 15px;">
+                        <label for="nome" style="color: white; font-size: 1.1em;">Nome</label>
+                        <input type="text" name="nome" placeholder="Nome completo" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div class="textfield" style="margin-bottom: 15px;">
+                        <label for="email" style="color: white; font-size: 1.1em;">E-mail</label>
+                        <input type="email" name="email" placeholder="E-mail" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div class="textfield" style="margin-bottom: 15px;">
+                        <label for="usuario" style="color: white; font-size: 1.1em;">Usuário</label>
+                        <input type="text" name="usuario" placeholder="Usuário" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+
+                    <div class="textfield" style="margin-bottom: 15px;">
+                        <label for="senha" style="color: white; font-size: 1.1em;">Senha</label>
+                        <input type="password" name="senha" placeholder="Senha" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <button type="submit" style="background-color: #afa04c; color: white; padding: 10px; width: 100%; border: none; border-radius: 4px; text-transform: uppercase; font-weight: bold; cursor: pointer;">Cadastrar</button>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="box-container">
+            <div class="box">
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda à Sexta: <i>8:00 - 17:00</i></p>
+                <p>Sábado: <i>8:00 - 12:00</i></p>
+                
+            </div>
+            <div class="box">
+                <h3>Nossos Contatos</h3>
+                <p><i class="fas fa-phone"></i> +55 (61) 9999-9999</p>
+                <p><i class="fas fa-envelope"></i> sgae@gmail.com</p>
+                <p><i class="fas fa-map"></i> Brasília, Brasil</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navbar = document.querySelector('.navbar');
+        menuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
