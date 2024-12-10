@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Cliente - Nossa Cafeteria</title>
+    <link rel="stylesheet" href="tai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cadastro de Cliente</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cadastro.php">Cadastro</a></li>
+                    <li><a href="compras.html">Compras</a></li>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="processa_cadastro.php" method="post" id="cadastroForm">
+                <h2>Crie sua Conta</h2>
+                <div class="input-group">
+                    <label for="nome"><i class="fas fa-user"></i> Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email"><i class="fas fa-envelope"></i> E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefone"><i class="fas fa-phone"></i> Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required pattern="\d{10,11}" placeholder="Apenas números">
+                </div>
+                <div class="input-group">
+                    <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nossa Cafeteria</p>
+    </footer>
+
+    <script>
+        // Validação adicional no lado do cliente
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            const senha = document.getElementById('senha').value;
+            if (senha.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = htmlspecialchars($_POST['nome']);
+    $email = htmlspecialchars($_POST['email']);
+    $telefone = htmlspecialchars($_POST['telefone']);
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+
+    // Conexão com o banco de dados
+    $servername = "localhost";
+    $username = "seu_usuario";
+    $password = "sua_senha";
+    $dbname = "sua_base_de_dados";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Conexão falhou: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO clientes (nome, email, telefone, senha) VALUES ('$nome', '$email', '$telefone', '$senha')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Cadastro realizado com sucesso, $nome! <a href='index.html'>Voltar à página inicial</a>";
+    } else {
+        echo "Erro: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
